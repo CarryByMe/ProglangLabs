@@ -154,5 +154,5 @@ Python).
 ![](screens/03dop/image.png)
 
 ### Источники
-* https://docs.oracle.com/javase/specs/jvms/se21/html/jvms-3.html
-* https://docs.python.org/3/library/py_compile.html
+* https://docs.oracle.com/javase/specs/jvms/se21/html/jvms-3.html - цикл в байт-коде
+* https://docs.python.org/3/library/py_compile.html - как перевести в байт-код один пайтон файл
