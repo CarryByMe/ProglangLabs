@@ -80,6 +80,6 @@ do statement while ( expression );. Формат записи (по правил
     for (int x : v) {
     cout << x;
   }
-
-  ### Задание 8
+  
+ ### Задание 8
   В тетради
