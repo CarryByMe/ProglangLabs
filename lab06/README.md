@@ -20,9 +20,33 @@ int main() {
 * ```constexpr auto Pi = std::acos(x) * 2;```
 
 *Что можно сказать об этих вариантах? Проверьте, в каких вариантах объявляется константа этапа трасляции.*
-* Константы этапа трансляции - constexpr auto Pi = std::acos(0) * 2 и constexpr auto Pi = std::acos(x) * 2
-* константные объекты - const auto Pi = acos(0) * 2 и const auto Pi = acos(x) * 2
-* последний вариант вызывает ошибку т.к программа не может получить значение x до сборки, x не загружен в память
+* Константа этапа трансляции — constexpr auto Pi = std::acos(0) * 2;
+* Константные объекты — const auto Pi = std::acos(0) * 2; и const auto Pi = std::acos(x) * 2;
+* Ошибка компиляции — constexpr auto Pi = std::acos(x) * 2; (значение переменной x неизвестно на этапе трансляции).
+
+* Проверка
+```
+#include <cmath>
+
+int main() {
+    double x = 0;
+
+    const auto Pi1 = std::acos(0) * 2;
+    constexpr double test1 = Pi1;
+
+    constexpr auto Pi2 = std::acos(0) * 2;
+    constexpr double test2 = Pi2;
+
+    const auto Pi3 = std::acos(x) * 2;
+    constexpr double test3 = Pi3;
+
+    constexpr auto Pi4 = std::acos(x) * 2;
+    constexpr double test4 = Pi4;
+
+    return 0;
+}
+```
+!()[01/image.png]
 
 
 *Тексты программ разместите в папке с номером задания*
